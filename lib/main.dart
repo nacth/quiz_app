@@ -70,6 +70,7 @@ class _MyAppState extends State<MyApp> {
     print('build main');
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Quiz App'),

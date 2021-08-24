@@ -11,6 +11,7 @@ class Answer extends StatelessWidget {
     print('build answer');
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 10),
       child: ElevatedButton(
         child: Text(answerText),
         onPressed: selectHandler,
