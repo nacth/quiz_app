@@ -39,17 +39,19 @@ class _MyAppState extends State<MyApp> {
     ];
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Quiz App'),
-          ),
-          body: Column(
-            children: [
-              Question(questions[_questionIndex]),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-            ],
-          )),
+        appBar: AppBar(
+          title: Text('Quiz App'),
+        ),
+        body: Column(
+          children: [
+            Question(questions[_questionIndex]['question']),
+            ...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_answerQuestion, answer);
+            }).toList()
+          ],
+        ),
+      ),
     );
   }
 }
